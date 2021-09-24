@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.main`
   max-width: 1080px;
-  margin: 10rem auto;
+  margin: 12rem auto 0;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -50,4 +50,11 @@ export const GlobalStyle = createGlobalStyle`
     opacity: .6;
     cursor: not-allowed;
   }
+
+  @media (max-width: 680px) {
+    .d-none {
+      display: none;
+      visibility: hidden;
+    }
+  }
 `;
