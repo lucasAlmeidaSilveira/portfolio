@@ -30,11 +30,13 @@ export const Contact = styled.div`
   justify-content: space-around;
   width: 100%;
   margin: 8rem auto 0;
+  flex-wrap: wrap;
 
 `;
 
 export const ContactBox = styled.div`
   padding: 3rem;
+  min-width: 25rem;
   border-radius: 1rem;
 
   display: flex;

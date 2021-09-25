@@ -19,6 +19,18 @@ export const BoxProjects = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 4rem;
+
+  @media (max-width: 1080px) {
+    & {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 780px) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
 `
 
 export const ProjectBox = styled.div`

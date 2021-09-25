@@ -16,9 +16,15 @@ export const Container = styled.article`
 `;
 
 export const BoxServices = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 4.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 4.5rem;
+
+  div{
+    width: min-content;
+    min-width: 30rem;
+  }
 `;
 
 export const ServiceBox = styled.div`

@@ -7,6 +7,7 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   a {
     color: var(--white);
@@ -22,7 +23,7 @@ export const Container = styled.header`
       color: var(--green);
     }
   }
-  
+
   ul {
     list-style: none;
     display: flex;
