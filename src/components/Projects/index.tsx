@@ -3,7 +3,7 @@ import { BoxProjects, Container } from "./style";
 
 export function Projects(){
   return(
-    <Container>
+    <Container id='projects'>
       <h2>Projetos</h2>
 
       <BoxProjects>
