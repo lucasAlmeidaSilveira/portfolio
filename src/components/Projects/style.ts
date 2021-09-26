@@ -31,33 +31,31 @@ export const BoxProjects = styled.div`
       grid-template-columns: 1fr;
     }
   }
-`
+`;
 
-export const ProjectBox = styled.div`
+export const ProjectBox = styled.a`
   max-width: 40rem;
   height: 24rem;
   padding: 2rem 2.5rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 
   background: var(--gray-60);
 
   cursor: pointer;
 
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 
   &:hover {
     background: var(--gray-40);
     transform: scale(1.02);
   }
 
-
-  
   img {
     width: 31rem;
     height: 13rem;
     margin-bottom: 2.3rem;
     object-fit: cover;
-    
+
     background: var(--background);
   }
 
@@ -74,7 +72,6 @@ export const ProjectBox = styled.div`
 
     color: var(--gray-20);
 
-    margin-top: .6rem;
+    margin-top: 0.6rem;
   }
-  
 `;
