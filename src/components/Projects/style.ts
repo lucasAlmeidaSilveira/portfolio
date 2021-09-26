@@ -41,8 +41,6 @@ export const ProjectBox = styled.a`
 
   background: var(--gray-60);
 
-  cursor: pointer;
-
   transition: all 0.2s ease;
 
   &:hover {

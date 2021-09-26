@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     --background: #171717; 
     --gray-60: #212121;
     --gray-40: #333333;
+    --gray-30: #444444;
     --gray-20: #828282;
     --white: #F9F9F9;
 
@@ -36,7 +37,29 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background: var(--background);
     -webkit-font-smoothing: antialiased;
+    
+    &::-webkit-scrollbar-track {
+      background-color: var(--background);
+    }
+
+    &::-webkit-scrollbar {
+      width: .8rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: .3rem;
+      background: var(--gray-40);
+
+      &:hover {
+        background: var(--gray-30);
+      }
+
+      &:active {
+        background: var(--gray-20)
+      }
+    }
   }
+  
 
   button {
     cursor: pointer;
