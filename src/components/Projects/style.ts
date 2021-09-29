@@ -35,7 +35,7 @@ export const BoxProjects = styled.div`
 
 export const ProjectBox = styled.a`
   max-width: 40rem;
-  height: 24rem;
+  height: auto;
   padding: 2rem 2.5rem;
   border-radius: 0.5rem;
 
