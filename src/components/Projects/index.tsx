@@ -4,36 +4,40 @@ import { Project } from './Project';
 import { BoxProjects, Container } from './style';
 
 export function Projects() {
-  const [projects, setProjects] = useState<ProjectProps[]>([])
+  const [projects, setProjects] = useState<ProjectProps[]>([]);
 
   useEffect(() => {
     fetch('https://api.github.com/users/lucasAlmeidaSilveira/repos')
       .then(response => response.json())
-      .then(data => projectsOrder(data))
-      // eslint-disable-next-line
-  }, [])
-  
+      .then(data => projectsOrder(data));
+    // eslint-disable-next-line
+  }, []);
 
-  function projectsFormat(project: ProjectProps){
+  function projectsFormat(project: ProjectProps) {
     return {
       id: project.id,
       homepage: project.homepage,
-      name: project.name,
+      name: project.name.replace(/-/gi, ' ').toUpperCase(),
       private: project.private,
       description: project.description,
-    }
+    };
   }
 
-  function projectExists(project: ProjectProps){
-    if(project.homepage !== '' && project.homepage !== null && !project.private) return project
+  function projectExists(project: ProjectProps) {
+    if (
+      project.homepage !== '' &&
+      project.homepage !== null &&
+      !project.private
+    )
+      return project;
   }
 
-  function projectsOrder(projects: ProjectProps[]){
-    const projectsFormatted = projects.map(projectsFormat) // formatando
-    const projectsOrder = projectsFormatted.filter(projectExists) // filtrando
-    setProjects(projectsOrder)
+  function projectsOrder(projects: ProjectProps[]) {
+    const projectsFormatted = projects.map(projectsFormat); // formatando
+    const projectsOrder = projectsFormatted.filter(projectExists); // filtrando
+    setProjects(projectsOrder);
 
-    return projectsOrder
+    return projectsOrder;
   }
 
   return (
@@ -41,7 +45,6 @@ export function Projects() {
       <h2>Projetos</h2>
 
       <BoxProjects>
-
         {projects.map(project => (
           <Project
             key={project.id}
