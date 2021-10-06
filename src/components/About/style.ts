@@ -34,7 +34,7 @@ export const Contact = styled.div`
 
 `;
 
-export const ContactBox = styled.div`
+export const ContactBox = styled.a`
   padding: 3rem;
   min-width: 25rem;
   border-radius: 1rem;
@@ -43,6 +43,8 @@ export const ContactBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  cursor: pointer;
 
   transition: all .2s ease;
 

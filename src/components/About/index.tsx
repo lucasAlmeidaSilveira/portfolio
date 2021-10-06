@@ -13,7 +13,7 @@ export function About() {
       <Contact>
         <BoxContact icon={<FaRegSmile />} title={'Meu nome'} description={'Lucas Almeida da Silveira'}/>
         <BoxContact icon={<FaEnvelope />} title={'E-mail'} description={'lucas.asilveira.sh@gmail.com'}/>
-        <BoxContact icon={<FaInstagram />} title={'Instagram'} description={'@lucasasilveira'}/>
+        <BoxContact icon={<FaInstagram />} title={'Instagram'} url={'https://www.instagram.com/lucas_asilveira/'} description={'@lucasasilveira'}/>
         <BoxContact icon={<FaPhoneAlt />} title={'Telefone'} description={'(11) 94493-5268'}/>
       </Contact>
 
