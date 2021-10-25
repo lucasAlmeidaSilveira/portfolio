@@ -5,3 +5,12 @@ export interface ProjectProps {
   description: string;
   homepage: string;
 }
+
+export interface UserDataProps {
+  id: string;
+  avatar_url: string;
+  html_url: string;
+  name: string;
+  blog: string;
+  bio: string;
+}
