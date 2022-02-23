@@ -1,26 +1,17 @@
 import { useHistory } from 'react-router-dom';
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { Container, DivRow } from './style';
 import { Button } from '../Button';
 import { InputLabel } from '../InputLabel';
+import { useData } from '../../hooks/useData';
 
 export function FormPortfolio() {
   const history = useHistory();
   const [name, setName] = useState('github');
-  const [avatar, setAvatar] = useState('');
   const [instagram, setInstagram] = useState('');
   const [phone, setPhone] = useState('');
 
-  useEffect(() => {
-    if(name === '') {
-      setName('github')
-      return
-    }
-    fetch(`https://api.github.com/users/${name}`)
-      .then(response => response.json())
-      .then(data => setAvatar(data.avatar_url));
-    // eslint-disable-next-line
-  }, [name]);
+  const {userData} = useData(name)
 
   function handleCreatePortfolio(event: FormEvent) {
     event.preventDefault();
@@ -31,8 +22,6 @@ export function FormPortfolio() {
 
     history.push(`/portfolio${name}`);
   }
-
-  console.log(name, instagram, phone)
 
   return (
     <Container>
@@ -61,7 +50,7 @@ export function FormPortfolio() {
               setValue={setPhone}
             />
           </div>
-          <img src={avatar} alt={name} />
+          <img src={userData?.avatar_url} alt={name} />
         </DivRow>
         <Button type='submit'>Gerar Portfolio</Button>
       </form>
