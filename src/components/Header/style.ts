@@ -36,7 +36,6 @@ export const Container = styled.header`
       
       &:hover {
         color: var(--green);
-        filter: brightness(.8);
       }
     }
 

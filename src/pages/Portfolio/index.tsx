@@ -6,11 +6,12 @@ import { Header } from '../../components/Header';
 import { Projects } from '../../components/Projects';
 import { Services } from '../../components/Services';
 import { Skills } from '../../components/Skills';
+import { UserDataProvider } from '../../contexts/userData';
 
 export function Portfolio() {
 
   return (
-    <>
+    <UserDataProvider>
       <Header />
       <Banner />
       <About />
@@ -18,6 +19,6 @@ export function Portfolio() {
       <Services />
       <Skills />
       <Footer />
-    </>
+    </UserDataProvider>
   );
 }
