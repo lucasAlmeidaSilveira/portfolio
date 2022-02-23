@@ -1,14 +1,10 @@
 import Cookies from 'js-cookie';
-import { createContext, ReactNode, useEffect, useState } from 'react';
-import { UserDataProps } from '../types';
-
-interface UserDataProviderProps {
-  children: ReactNode;
-}
-
-interface UserDataContextProps {
-  userData?: UserDataProps;
-}
+import { createContext, useEffect, useState } from 'react';
+import {
+  UserDataProps,
+  UserDataContextProps,
+  UserDataProviderProps,
+} from '../types';
 
 export const UserDataContext = createContext({} as UserDataContextProps);
 

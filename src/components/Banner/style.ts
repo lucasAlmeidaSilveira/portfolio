@@ -7,6 +7,15 @@ export const Container = styled.main`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  img {
+    width: 40rem;
+    height: 40rem;
+    border-radius: 100%;
+    border: 4px solid var(--green);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    image-rendering: pixelated;
+  }
 `;
 
 export const ContentBanner = styled.div`

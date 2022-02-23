@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface ProjectProps {
   id: number;
   name: string;
@@ -14,4 +16,12 @@ export interface UserDataProps {
   name: string;
   blog: string;
   bio: string;
+}
+
+export interface UserDataProviderProps {
+  children: ReactNode;
+}
+
+export interface UserDataContextProps {
+  userData?: UserDataProps;
 }
