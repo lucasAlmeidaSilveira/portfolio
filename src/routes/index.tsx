@@ -7,7 +7,7 @@ export default function Routes() {
   return (
     <Switch>
       <Route path='/' exact component={ Login } />
-      <Route path='/portfolio:name' component={ Portfolio } />
+      <Route path='/portfolio' component={ Portfolio } />
     </Switch>
   );
 }

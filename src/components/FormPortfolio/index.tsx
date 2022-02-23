@@ -4,6 +4,7 @@ import { Container, DivRow } from './style';
 import { Button } from '../Button';
 import { InputLabel } from '../InputLabel';
 import { useData } from '../../hooks/useData';
+import Cookies from 'js-cookie';
 
 export function FormPortfolio() {
   const history = useHistory();
@@ -11,7 +12,7 @@ export function FormPortfolio() {
   const [instagram, setInstagram] = useState('');
   const [phone, setPhone] = useState('');
 
-  const {userData} = useData(name)
+  const { userData } = useData(name);
 
   function handleCreatePortfolio(event: FormEvent) {
     event.preventDefault();
@@ -19,8 +20,11 @@ export function FormPortfolio() {
     if (name.trim() === '') {
       return;
     }
+    Cookies.set('userID', name);
+    Cookies.set('instagram', instagram);
+    Cookies.set('phone', phone);
 
-    history.push(`/portfolio${name}`);
+    history.push('/portfolio');
   }
 
   return (
