@@ -13,6 +13,7 @@ export const Label = styled.label`
   color: var(--green);
 
   input {
+    margin-top: .4rem;
     padding: 8px 16px;
     max-width: 20rem;
     background: var(--white);
@@ -20,6 +21,7 @@ export const Label = styled.label`
     font-size: 1.6rem;
     color: var(--gray-20);
     border-radius: 5px;
+    border: 0;
 
     transition: all 0.2 ease;
 

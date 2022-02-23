@@ -5,7 +5,6 @@ export const ButtonStyle = styled.button`
   align-items: center;
   justify-content: center;
 
-  max-width: 20rem;
   width: 100%;
   border: 0;
   border-radius: 0.25rem;
@@ -17,8 +16,8 @@ export const ButtonStyle = styled.button`
   padding: 8px 24px;
 
   &:hover {
-    background-color: var(--gray-40);
+    filter: brightness(.8);
   }
 
-  transition: background 0.2s ease;
+  transition: filter 0.2s ease;
 `;

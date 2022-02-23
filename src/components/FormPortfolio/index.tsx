@@ -1,14 +1,26 @@
 import { useHistory } from 'react-router-dom';
-import { FormEvent, useState } from 'react';
-import { Container } from './style';
+import { FormEvent, useEffect, useState } from 'react';
+import { Container, DivRow } from './style';
 import { Button } from '../Button';
 import { InputLabel } from '../InputLabel';
 
 export function FormPortfolio() {
   const history = useHistory();
-  const [name, setName] = useState('');
+  const [name, setName] = useState('github');
+  const [avatar, setAvatar] = useState('');
   const [instagram, setInstagram] = useState('');
   const [phone, setPhone] = useState('');
+
+  useEffect(() => {
+    if(name === '') {
+      setName('github')
+      return
+    }
+    fetch(`https://api.github.com/users/${name}`)
+      .then(response => response.json())
+      .then(data => setAvatar(data.avatar_url));
+    // eslint-disable-next-line
+  }, [name]);
 
   function handleCreatePortfolio(event: FormEvent) {
     event.preventDefault();
@@ -28,24 +40,29 @@ export function FormPortfolio() {
         login<span>Portfólio</span>
       </h1>
       <form onSubmit={handleCreatePortfolio}>
-        <InputLabel
-          label='ID do Github'
-          type='text'
-          placeholder='lucasAlmeidaSilveira'
-          setValue={setName}
-        />
-        <InputLabel
-          label='Instagram'
-          type='tel'
-          placeholder='lucas_asilveira'
-          setValue={setInstagram}
-        />
-        <InputLabel
-          label='Celular'
-          type='phone'
-          placeholder='(11) 9999-9999'
-          setValue={setPhone}
-        />
+        <DivRow>
+          <div>
+            <InputLabel
+              label='ID do Github'
+              type='text'
+              placeholder='lucasAlmeidaSilveira'
+              setValue={setName}
+            />
+            <InputLabel
+              label='Instagram'
+              type='tel'
+              placeholder='lucas_asilveira'
+              setValue={setInstagram}
+            />
+            <InputLabel
+              label='Celular'
+              type='phone'
+              placeholder='(11) 9999-9999'
+              setValue={setPhone}
+            />
+          </div>
+          <img src={avatar} alt={name} />
+        </DivRow>
         <Button type='submit'>Gerar Portfolio</Button>
       </form>
     </Container>
