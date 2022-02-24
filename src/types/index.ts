@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactElement, ReactNode } from 'react';
 
 export interface ProjectProps {
   id: number;
@@ -9,6 +9,11 @@ export interface ProjectProps {
 }
 
 export interface UserDataProps {
+  data?: DataAPIProps;
+  infoAdd?: dataAdditionalProps;
+}
+
+export interface DataAPIProps {
   message?: string;
   id: string;
   avatar_url: string;
@@ -16,6 +21,12 @@ export interface UserDataProps {
   name: string;
   blog: string;
   bio: string;
+  email?: string;
+}
+
+export interface dataAdditionalProps {
+  instagram?: string;
+  phone?: string;
 }
 
 export interface UserDataProviderProps {
@@ -24,4 +35,11 @@ export interface UserDataProviderProps {
 
 export interface UserDataContextProps {
   userData?: UserDataProps;
+}
+
+export interface BoxContactProps {
+  icon: ReactElement;
+  title: string;
+  description?: string;
+  url?: string;
 }

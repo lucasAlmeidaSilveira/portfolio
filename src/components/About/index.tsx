@@ -1,20 +1,22 @@
 import { Contact, Container } from './style';
 import { BoxContact } from './BoxContact';
-import { FaEnvelope, FaInstagram, FaPhoneAlt, FaRegSmile } from 'react-icons/fa';
+import { FaHouseUser, FaInstagram, FaPhoneAlt, FaRegSmile } from 'react-icons/fa';
+import { useContext } from 'react';
+import { UserDataContext } from '../../contexts/userData';
 
 export function About() {
+  const { userData } = useContext(UserDataContext);
+
   return (
     <Container id="about">
       <h2>Sobre mim</h2>
-      <p>
-      Sempre tive muita apreço com a área de tecnologia. Trabalhei como auxiliar de TI durante um ano num Colégio de educação religiosa. Hoje pretendo crescer profissionalmente, adquirir novas experiências, e fazer investimentos pessoais em minha carreira, me especializando na área de Desenvolvimento Front End, com as tecnologias de Javascript e suas libs como ReactJS.
-      </p>
+      <p>{userData?.data?.bio}</p>
 
       <Contact>
-        <BoxContact icon={<FaRegSmile />} title={'Meu nome'} description={'Lucas Almeida da Silveira'}/>
-        <BoxContact icon={<FaEnvelope />} title={'E-mail'} description={'lucas.asilveira.sh@gmail.com'}/>
-        <BoxContact icon={<FaInstagram />} title={'Instagram'} url={'https://www.instagram.com/lucas_asilveira/'} description={'@lucasasilveira'}/>
-        <BoxContact icon={<FaPhoneAlt />} title={'Telefone'} description={'(11) 94493-5268'}/>
+        <BoxContact icon={<FaRegSmile />} title={'Meu nome'} description={userData?.data?.name}/>
+        <BoxContact icon={<FaHouseUser />} title={'Website'} url={userData?.data?.blog}/>
+        <BoxContact icon={<FaInstagram />} title={'Instagram'} url={`https://www.instagram.com/${userData?.infoAdd?.instagram}`} description={`@${userData?.infoAdd?.instagram}`}/>
+        <BoxContact icon={<FaPhoneAlt />} title={'Telefone'} description={`${userData?.infoAdd?.phone}`}/>
       </Contact>
 
     </Container>

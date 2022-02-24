@@ -70,7 +70,9 @@ export const ContactBox = styled.a`
 
     & + p {
       color: var(--gray-20);
+      max-width: 21rem;
       font-size: 1.6rem;
+      text-align: center;
       margin-top: 0.5rem;
     }
   }

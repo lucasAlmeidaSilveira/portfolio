@@ -1,5 +1,5 @@
 import { FaCss3Alt, FaHtml5, FaJs, FaReact } from "react-icons/fa";
-import { SiNextDotJs } from 'react-icons/si'
+import { SiNextdotjs } from 'react-icons/si'
 import { Skill } from "./Skill";
 import { BoxSkills, Container } from "./style";
 
@@ -13,7 +13,7 @@ export function Skills(){
         <Skill icon={<FaCss3Alt />}/>
         <Skill icon={<FaJs />}/>
         <Skill icon={<FaReact />}/>
-        <Skill icon={<SiNextDotJs />}/>
+        <Skill icon={<SiNextdotjs />}/>
       </BoxSkills>
 
     </Container>

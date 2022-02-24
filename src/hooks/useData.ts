@@ -1,8 +1,8 @@
-import { UserDataProps } from '../types';
+import { DataAPIProps } from '../types';
 import { useEffect, useState } from 'react';
 
 export function useData(name: string) {
-  const [userData, setUserData] = useState<UserDataProps>();
+  const [userData, setUserData] = useState<DataAPIProps>();
 
   useEffect(() => {
     fetch(`https://api.github.com/users/${name}`)

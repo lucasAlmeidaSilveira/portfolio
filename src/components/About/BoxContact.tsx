@@ -1,19 +1,7 @@
-import { ReactElement } from 'react';
+import { BoxContactProps } from '../../types';
 import { ContactBox } from './style';
 
-type BoxContactProps = {
-  icon: ReactElement;
-  title: string;
-  description: string;
-  url?: string;
-};
-
-export function BoxContact({
-  icon,
-  title,
-  description,
-  url,
-}: BoxContactProps) {
+export function BoxContact({ icon, title, description, url }: BoxContactProps) {
   return (
     <ContactBox target='_blank' href={url}>
       {icon}

@@ -1,24 +1,28 @@
 import Cookies from 'js-cookie';
 import { createContext, useEffect, useState } from 'react';
 import {
-  UserDataProps,
   UserDataContextProps,
+  UserDataProps,
   UserDataProviderProps,
 } from '../types';
 
 export const UserDataContext = createContext({} as UserDataContextProps);
 
 export function UserDataProvider({ children }: UserDataProviderProps) {
-  const name = Cookies.get('userID');
-
-  const [userData, setUserData] = useState<UserDataProps>();
+  // const [userData, setUserData] = useState<UserDataProps>();
+  const [userData, setUserData] = useState<UserDataProps>({} as UserDataProps);
+  const userID = Cookies.get('userID');
+  const infoAdd = {
+    instagram: Cookies.get('instagram'),
+    phone: Cookies.get('phone'),
+  };
 
   useEffect(() => {
-    fetch(`https://api.github.com/users/${name}`)
+    fetch(`https://api.github.com/users/${userID}`)
       .then(response => response.json())
-      .then(data => setUserData(data));
+      .then(data => setUserData({data, infoAdd}));
     // eslint-disable-next-line
-  }, [name]);
+  }, [userID]);
 
   return (
     <UserDataContext.Provider value={{ userData }}>
