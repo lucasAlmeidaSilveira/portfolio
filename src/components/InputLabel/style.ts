@@ -9,7 +9,7 @@ export const Label = styled.label`
 
   font-size: 1.4rem;
   font-weight: bold;
-  line-height: 1.2rem;
+  line-height: 1.6rem;
   color: var(--green);
 
   input {
@@ -28,9 +28,10 @@ export const Label = styled.label`
     &:hover {
       background: #ffffff;
     }
-
+    
     &:focus {
-     color: var(--gray-60);
+      background: #ffffff;
+      color: var(--gray-60);
     }
   }
 `;

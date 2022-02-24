@@ -7,7 +7,7 @@ export const ButtonStyle = styled.button`
 
   width: 100%;
   border: 0;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
 
   font-size: 1.4rem;
   font-weight: bold;
