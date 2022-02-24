@@ -1,7 +1,7 @@
 import { ProjectBox } from './style';
 
 type ProjectProps = {
-  img: string;
+  img?: string;
   title: string;
   description: string;
   url: string;

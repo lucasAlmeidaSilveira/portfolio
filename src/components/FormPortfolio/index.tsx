@@ -3,7 +3,7 @@ import { FormEvent, useState } from 'react';
 import { Container, DivRow } from './style';
 import { Button } from '../Button';
 import { InputLabel } from '../InputLabel';
-import { useData } from '../../hooks/useData';
+import { useDataProfile } from '../../hooks/useDataProfile';
 import Cookies from 'js-cookie';
 
 export function FormPortfolio() {
@@ -12,7 +12,7 @@ export function FormPortfolio() {
   const [instagram, setInstagram] = useState('');
   const [phone, setPhone] = useState('');
 
-  const { userData } = useData(name);
+  const { data } = useDataProfile(name);
 
   function handleCreatePortfolio(event: FormEvent) {
     event.preventDefault();
@@ -54,7 +54,7 @@ export function FormPortfolio() {
               setValue={setPhone}
             />
           </div>
-          <img src={userData?.avatar_url} alt={name} />
+          <img src={data?.avatar_url} alt={name} />
         </DivRow>
         <Button type='submit'>Gerar Portfolio</Button>
       </form>

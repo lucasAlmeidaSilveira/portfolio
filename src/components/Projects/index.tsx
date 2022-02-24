@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 import { useEffect, useState } from 'react';
 import { ProjectProps } from '../../types';
 import { Project } from './Project';
@@ -5,13 +6,18 @@ import { BoxProjects, Container } from './style';
 
 export function Projects() {
   const [projects, setProjects] = useState<ProjectProps[]>([]);
+  const userID = Cookies.get('userID');
+
+  // const dataProjects = useDataRepos(userData?.data?.)
+  // const {repos} = useDataRepos(userID)
+  // setProjects(repos)
 
   useEffect(() => {
-    fetch('https://api.github.com/users/lucasAlmeidaSilveira/repos')
+    fetch(`https://api.github.com/users/${userID}/repos`)
       .then(response => response.json())
       .then(data => projectsOrder(data));
     // eslint-disable-next-line
-  }, []);
+  }, [userID]);
 
   function projectsFormat(project: ProjectProps) {
     return {

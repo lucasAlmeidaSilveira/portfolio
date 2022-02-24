@@ -1,7 +1,7 @@
 import { DataAPIProps } from '../types';
 import { useEffect, useState } from 'react';
 
-export function useData(name: string) {
+export function useDataProfile(name: string | undefined) {
   const [userData, setUserData] = useState<DataAPIProps>();
 
   useEffect(() => {
@@ -11,5 +11,5 @@ export function useData(name: string) {
     // eslint-disable-next-line
   }, [name]);
 
-  return { userData };
+  return { data: userData };
 }

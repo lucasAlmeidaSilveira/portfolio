@@ -9,7 +9,6 @@ import {
 export const UserDataContext = createContext({} as UserDataContextProps);
 
 export function UserDataProvider({ children }: UserDataProviderProps) {
-  // const [userData, setUserData] = useState<UserDataProps>();
   const [userData, setUserData] = useState<UserDataProps>({} as UserDataProps);
   const userID = Cookies.get('userID');
   const infoAdd = {

@@ -11,6 +11,7 @@ export interface ProjectProps {
 export interface UserDataProps {
   data?: DataAPIProps;
   infoAdd?: dataAdditionalProps;
+  projects?: ProjectProps[];
 }
 
 export interface DataAPIProps {
@@ -34,7 +35,7 @@ export interface UserDataProviderProps {
 }
 
 export interface UserDataContextProps {
-  userData?: UserDataProps;
+  userData: UserDataProps;
 }
 
 export interface BoxContactProps {
