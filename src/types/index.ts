@@ -1,4 +1,9 @@
-import { ReactElement, ReactNode } from 'react';
+import { InputHTMLAttributes, ReactElement, ReactNode } from 'react';
+
+export interface InputLabelProps extends InputHTMLAttributes<HTMLInputElement> {
+  label: string;
+  setValue: (value: string) => void;
+}
 
 export interface ProjectProps {
   id: number;

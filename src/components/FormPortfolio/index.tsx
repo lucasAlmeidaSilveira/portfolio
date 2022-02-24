@@ -1,10 +1,10 @@
 import { useHistory } from 'react-router-dom';
 import { FormEvent, useState } from 'react';
+import Cookies from 'js-cookie';
+import { useDataProfile } from '../../hooks/useDataProfile';
 import { Container, DivRow } from './style';
 import { Button } from '../Button';
 import { InputLabel } from '../InputLabel';
-import { useDataProfile } from '../../hooks/useDataProfile';
-import Cookies from 'js-cookie';
 
 export function FormPortfolio() {
   const history = useHistory();
@@ -40,18 +40,21 @@ export function FormPortfolio() {
               type='text'
               placeholder='lucasAlmeidaSilveira'
               setValue={setName}
+              value={name}
             />
             <InputLabel
               label='Instagram'
               type='tel'
               placeholder='lucas_asilveira'
               setValue={setInstagram}
+              value={instagram}
             />
             <InputLabel
               label='Celular'
               type='phone'
               placeholder='(11) 9999-9999'
               setValue={setPhone}
+              value={phone}
             />
           </div>
           <img src={data?.avatar_url} alt={name} />
