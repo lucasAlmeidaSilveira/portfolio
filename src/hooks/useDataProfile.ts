@@ -7,9 +7,15 @@ export function useDataProfile(name: string | undefined) {
   useEffect(() => {
     fetch(`https://api.github.com/users/${name}`)
       .then(response => response.json())
-      .then(data => setUserData(data));
+      .then(data => {
+        const userData = {
+          ...data
+        }
+
+        setUserData(userData)
+      });
     // eslint-disable-next-line
   }, [name]);
 
-  return { data: userData };
+  return { userData };
 }

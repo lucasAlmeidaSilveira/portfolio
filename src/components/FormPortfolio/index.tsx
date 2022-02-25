@@ -12,7 +12,7 @@ export function FormPortfolio() {
   const [instagram, setInstagram] = useState('');
   const [phone, setPhone] = useState('');
 
-  const { data } = useDataProfile(name);
+  const {userData} = useDataProfile(name);
 
   function handleCreatePortfolio(event: FormEvent) {
     if (name.trim() === '') {
@@ -55,7 +55,7 @@ export function FormPortfolio() {
               value={phone}
             />
           </div>
-          <img src={data?.avatar_url} alt={name} />
+          <img src={userData?.avatar_url} alt={name} />
         </DivRow>
         <Button type='submit'>Gerar Portfolio</Button>
       </form>
