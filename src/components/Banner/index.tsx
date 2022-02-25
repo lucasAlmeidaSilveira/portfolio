@@ -5,7 +5,7 @@ import { Container, ContentBanner } from './style';
 export function Banner() {
   const { userData } = useContext(UserDataContext);
 
-  const name = userData?.data?.name.split(' ').slice(0, 2).join(' ');
+  const name = userData.name?.split(' ').slice(0, 2).join(' ');
 
   return (
     <Container>
@@ -18,7 +18,7 @@ export function Banner() {
         <button>Download CV</button>
         <button>Entrar em contato</button>
       </ContentBanner>
-      <img className='d-none' src={userData?.data?.avatar_url} alt={name} />
+      <img className='d-none' src={userData.avatar_url} alt={name} />
     </Container>
   );
 }

@@ -19,9 +19,18 @@ export function UserDataProvider({ children }: UserDataProviderProps) {
   useEffect(() => {
     fetch(`https://api.github.com/users/${userID}`)
       .then(response => response.json())
-      .then(data => setUserData({data, infoAdd}));
+      .then(data => {
+        const userData = {
+            ...data,
+            ...infoAdd
+        }
+    
+        setUserData(userData)
+      });
     // eslint-disable-next-line
   }, [userID]);
+
+  console.log(userData)
 
   return (
     <UserDataContext.Provider value={{ userData }}>

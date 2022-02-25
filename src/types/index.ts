@@ -14,25 +14,17 @@ export interface ProjectProps {
 }
 
 export interface UserDataProps {
-  data?: DataAPIProps;
-  infoAdd?: dataAdditionalProps;
-  projects?: ProjectProps[];
-}
-
-export interface DataAPIProps {
   message?: string;
   id: string;
   avatar_url: string;
   html_url: string;
-  name: string;
+  name?: string;
   blog: string;
   bio: string;
   email?: string;
-}
-
-export interface dataAdditionalProps {
   instagram?: string;
   phone?: string;
+  projects?: ProjectProps[];
 }
 
 export interface UserDataProviderProps {

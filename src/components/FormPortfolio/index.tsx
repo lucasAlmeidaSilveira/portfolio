@@ -15,8 +15,6 @@ export function FormPortfolio() {
   const { data } = useDataProfile(name);
 
   function handleCreatePortfolio(event: FormEvent) {
-    event.preventDefault();
-
     if (name.trim() === '') {
       return;
     }

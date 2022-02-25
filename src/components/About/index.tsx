@@ -10,13 +10,13 @@ export function About() {
   return (
     <Container id="about">
       <h2>Sobre mim</h2>
-      <p>{userData?.data?.bio}</p>
+      <p>{userData.bio}</p>
 
       <Contact>
-        <BoxContact icon={<FaRegSmile />} title={'Meu nome'} description={userData?.data?.name}/>
-        <BoxContact icon={<FaHouseUser />} title={'Website'} url={userData?.data?.blog}/>
-        <BoxContact icon={<FaInstagram />} title={'Instagram'} url={`https://www.instagram.com/${userData?.infoAdd?.instagram}`} description={`@${userData?.infoAdd?.instagram}`}/>
-        <BoxContact icon={<FaPhoneAlt />} title={'Telefone'} description={`${userData?.infoAdd?.phone}`}/>
+        <BoxContact icon={<FaRegSmile />} title={'Meu nome'} description={userData.name}/>
+        <BoxContact icon={<FaHouseUser />} title={'Website'} url={userData.blog}/>
+        <BoxContact icon={<FaInstagram />} title={'Instagram'} url={`https://www.instagram.com/${userData.instagram}`} description={`@${userData.instagram}`}/>
+        <BoxContact icon={<FaPhoneAlt />} title={'Telefone'} description={`${userData.phone}`}/>
       </Contact>
 
     </Container>
