@@ -9,6 +9,7 @@ import { InputLabel } from '../InputLabel';
 export function FormPortfolio() {
   const history = useHistory();
   const [name, setName] = useState('github');
+  const [occupation, setOccupation] = useState('');
   const [instagram, setInstagram] = useState('');
   const [phone, setPhone] = useState('');
 
@@ -19,6 +20,7 @@ export function FormPortfolio() {
       return;
     }
     Cookies.set('userID', name);
+    Cookies.set('occupation', occupation);
     Cookies.set('instagram', instagram);
     Cookies.set('phone', phone);
 
@@ -39,6 +41,13 @@ export function FormPortfolio() {
               placeholder='lucasAlmeidaSilveira'
               setValue={setName}
               value={name}
+            />
+            <InputLabel
+              label='Ocupação/Profissão'
+              type='text'
+              placeholder='Desenvolvedor Front-End'
+              setValue={setOccupation}
+              value={occupation}
             />
             <InputLabel
               label='Instagram'
