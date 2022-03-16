@@ -5,14 +5,16 @@ import { useDataProfile } from '../../hooks/useDataProfile';
 import { Container, DivRow } from './style';
 import { Button } from '../Button';
 import { InputLabel } from '../InputLabel';
+import { useDebounce } from 'use-debounce/lib';
 
 export function FormPortfolio() {
   const history = useHistory();
   const [name, setName] = useState('github');
   const [instagram, setInstagram] = useState('');
   const [phone, setPhone] = useState('');
+  const [valueDebounced] = useDebounce(name, 500)
 
-  const {userData} = useDataProfile(name);
+  const {userData} = useDataProfile(valueDebounced);
 
   function handleCreatePortfolio(event: FormEvent) {
     if (name.trim() === '') {
