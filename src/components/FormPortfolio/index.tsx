@@ -9,10 +9,10 @@ import { useDebounce } from 'use-debounce/lib';
 
 export function FormPortfolio() {
   const history = useHistory();
-  const [name, setName] = useState('github');
-  const [occupation, setOccupation] = useState('');
-  const [instagram, setInstagram] = useState('');
-  const [phone, setPhone] = useState('');
+  const [name, setName] = useState('lucasAlmeidaSilveira');
+  const [occupation, setOccupation] = useState('Desenvolvedor Front-End');
+  const [instagram, setInstagram] = useState('lucas_asilveira');
+  const [phone, setPhone] = useState('(11) 94493-5268');
   const [valueDebounced] = useDebounce(name, 500)
 
   const {userData} = useDataProfile(valueDebounced);
